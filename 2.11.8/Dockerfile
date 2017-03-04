@@ -13,4 +13,7 @@ RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/0.13.13/sbt-0.13.13.
 # Remove build dependencies
 RUN apk del --no-cache .dependencies
 
+VOLUME /app
+WORKDIR /app
+
 CMD ["sbt"]
