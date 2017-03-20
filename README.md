@@ -10,4 +10,5 @@ This image may be used in a standalone fashion by defining the following aliases
 $ alias sbt='docker run --rm --tty --interactive --volume $PWD:/app bigtruedata/sbt'
 ```
 
-
+# Versions
+This image is based on the [`bigtruedata/scala`](https://hub.docker.com/r/bigtruedata/scala/) image to provide an environment to compile and execute Java and Scala programs. The versions of the image are related to the versions of the base Scala image.
