@@ -6,8 +6,8 @@ FROM bigtruedata/scala:2.11.8
 # Install build dependencies
 RUN apk add --no-cache --virtual=.dependencies tar
 
-RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/0.13.13/sbt-0.13.13.tgz" \\
-    |  tar xzf - -C /usr/local --strip-components=1 \\
+RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/0.13.13/sbt-0.13.13.tgz" \
+    |  tar xzf - -C /usr/local --strip-components=1 \
     && sbt exit
 
 # Remove build dependencies
