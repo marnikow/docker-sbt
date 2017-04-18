@@ -2,38 +2,29 @@
 
 set -eo pipefail
 
-declare -a versions=(
+declare -a sbt_versions=(
+  0.13.15
+  0.13.13
+)
+
+declare -a scala_versions=(
+  2.13.0-M1
   2.12.2
   2.12.1
   2.11.8
   2.10.6
 )
 
-for version in "${versions[@]}"
+for sbt_version in "${sbt_versions[@]}"
 do
-  rm -rf "$version"
-  mkdir "$version"
+  for scala_version in "${scala_versions[@]}"
+  do
+    dirname="${sbt_version}-${scala_version}"
 
-  cat > "$version/Dockerfile" <<-END
-# Generated automatically by update.sh
-# Do no edit this file
+    rm -rf "$dirname"
+    mkdir "$dirname"
 
-FROM bigtruedata/scala:$version
-
-# Install build dependencies
-RUN apk add --no-cache --virtual=.dependencies tar
-
-RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/0.13.13/sbt-0.13.13.tgz" \\
-    |  tar xzf - -C /usr/local --strip-components=1 \\
-    && sbt exit
-
-# Remove build dependencies
-RUN apk del --no-cache .dependencies
-
-VOLUME /app
-WORKDIR /app
-
-CMD ["sbt"]
-END
-
+    sed -e "s/<sbt-version>/$sbt_version/g" Dockerfile.template \
+    | sed -e "s/<scala-version>/$scala_version/g" - > "$dirname/Dockerfile"
+  done
 done
