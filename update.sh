@@ -19,10 +19,10 @@ for sbt_version in "${sbt_versions[@]}"
 do
   for scala_version in "${scala_versions[@]}"
   do
-    dirname="${sbt_version}-${scala_version}"
+    dirname="${sbt_version}/${scala_version}"
 
     rm -rf "$dirname"
-    mkdir "$dirname"
+    mkdir -p "$dirname"
 
     sed -e "s/<sbt-version>/$sbt_version/g" Dockerfile.template \
     | sed -e "s/<scala-version>/$scala_version/g" - > "$dirname/Dockerfile"
