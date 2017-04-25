@@ -12,6 +12,12 @@
 - [`0.13.13-2.11.8`,`0.13.13-2.11`(0.13.13/2.11.8/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.13/2.11.8/Dockerfile)
 - [`0.13.13-2.10.6`,`0.13.13-2.10`(0.13.13/2.10.6/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.13/2.10.6/Dockerfile)
 
+---
+
+![logo](https://raw.githubusercontent.com/bigtruedata/docker-sbt/master/logo.png)
+
+> [wikipedia.org/wiki/Sbt_(software)](https://en.wikipedia.org/wiki/Sbt_(software))
+
 # Quick Start
 This image provides an environment using the SBT utility to work on Scala or Java software. If no command is provided when running the image (as shown in te following example) the SBT REPL is launched:
 
