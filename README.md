@@ -16,7 +16,7 @@
 
 ![logo](https://raw.githubusercontent.com/bigtruedata/docker-sbt/master/logo.png)
 
-> [wikipedia.org/wiki/Sbt_(software)](https://en.wikipedia.org/wiki/Sbt_(software))
+> [scala-sbt.org](http://www.scala-sbt.org/)
 
 # Quick Start
 This image provides an environment using the SBT utility to work on Scala or Java software. If no command is provided when running the image (as shown in te following example) the SBT REPL is launched:
