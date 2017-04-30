@@ -4,7 +4,7 @@
 ![Docker Stars](https://img.shields.io/docker/stars/bigtruedata/sbt.svg?style=plastic)
 ![license](https://img.shields.io/github/license/bigtruedata/docker-sbt.svg?style=plastic)
 
-# [Scala Docker Image](https://hub.docker.com/r/bigtruedata/sbt/)
+# [SBT Docker Image](https://hub.docker.com/r/bigtruedata/sbt/)
 
 ## Supported tags and respective `Dockerfile` links
 - [`0.13.15-2.13.0-M1`(0.13.15/2.13.0-M1/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.13.0-M1/Dockerfile)
