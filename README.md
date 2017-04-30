@@ -8,10 +8,10 @@
 
 ## Supported tags and respective `Dockerfile` links
 - [`0.13.15-2.13.0-M1`(0.13.15/2.13.0-M1/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.13.0-M1/Dockerfile)
-- [`0.13.15-2.12.2`,`0.13.13-2.12`,`latest`(0.13.15/2.12.2/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.12.2/Dockerfile)
+- [`0.13.15-2.12.2`,`0.13.15-2.12`,`latest`(0.13.15/2.12.2/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.12.2/Dockerfile)
 - [`0.13.15-2.12.1`(0.13.15/2.12.1/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.12.1/Dockerfile)
-- [`0.13.15-2.11.8`,`0.13.13-2.11`(0.13.15/2.11.8/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.11.8/Dockerfile)
-- [`0.13.15-2.10.6`,`0.13.13-2.10`(0.13.15/2.10.6/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.10.6/Dockerfile)
+- [`0.13.15-2.11.8`,`0.13.15-2.11`(0.13.15/2.11.8/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.11.8/Dockerfile)
+- [`0.13.15-2.10.6`,`0.13.15-2.10`(0.13.15/2.10.6/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.15/2.10.6/Dockerfile)
 - [`0.13.13-2.13.0-M1`(0.13.13/2.13.0-M1/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.13/2.13.0-M1/Dockerfile)
 - [`0.13.13-2.12.2`,`0.13.13-2.12`(0.13.13/2.12.2/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.13/2.12.2/Dockerfile)
 - [`0.13.13-2.12.1`(0.13.13/2.12.1/Dockerfile)](https://github.com/bigtruedata/docker-sbt/blob/master/0.13.13/2.12.1/Dockerfile)
