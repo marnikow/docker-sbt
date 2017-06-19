@@ -4,7 +4,7 @@
 FROM bigtruedata/scala:2.12.1
 
 # Install build dependencies
-RUN apk add --no-cache --virtual=.dependencies tar
+RUN apk add --no-cache --virtual=.dependencies tar wget
 
 RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/0.13.15/sbt-0.13.15.tgz" \
     |  tar xzf - -C /usr/local --strip-components=1 \
