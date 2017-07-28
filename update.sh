@@ -10,12 +10,18 @@ declare -a sbt_versions=(
 )
 
 declare -a scala_versions=(
-  2.13.0-M1
+  2.12.3
   2.12.2
   2.12.1
+  2.12.0
   2.11.11
+  2.11.10
+  2.11.9
   2.11.8
   2.10.6
+  2.10.5
+  2.10.4
+  2.10.3
 )
 
 for sbt_version in "${sbt_versions[@]}"
