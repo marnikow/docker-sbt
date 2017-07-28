@@ -1,7 +1,7 @@
 # Generated automatically by update.sh
 # Do no edit this file
 
-FROM bigtruedata/scala:2.13.0-M1
+FROM bigtruedata/scala:2.12.3
 
 # Install build dependencies
 RUN apk add --no-cache --virtual=.dependencies tar wget

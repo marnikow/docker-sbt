@@ -1,12 +1,12 @@
 # Generated automatically by update.sh
 # Do no edit this file
 
-FROM bigtruedata/scala:2.13.0-M1
+FROM bigtruedata/scala:2.10.4
 
 # Install build dependencies
 RUN apk add --no-cache --virtual=.dependencies tar wget
 
-RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/0.13.13/sbt-0.13.13.tgz" \
+RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/0.13.16/sbt-0.13.16.tgz" \
     |  tar xzf - -C /usr/local --strip-components=1 \
     && sbt exit
 
