@@ -3,6 +3,7 @@
 set -eo pipefail
 
 declare -a sbt_versions=(
+  0.13.16
   0.13.15
   0.13.14
   0.13.13
