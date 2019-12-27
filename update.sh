@@ -4,11 +4,11 @@ set -eo pipefail
 
 DOCKER_ACC=marnikow
 DOCKER_REPO=sbt
-DOCKER_SBT_LATEST=2.13.1
-DOCKER_SCALA_LATEST=2.13.1
 SBT_VERSIONS_FILE="sbt_versions.txt"
 SCALA_VERSIONS_FILE="scala_versions.txt"
 
+read -r DOCKER_SBT_LATEST < "$SBT_VERSIONS_FILE"
+read -r DOCKER_SCALA_LATEST < "$SCALA_VERSIONS_FILE"
 sbt_versions="$(cat $SBT_VERSIONS_FILE)"
 scala_versions="$(cat $SCALA_VERSIONS_FILE)"
 
@@ -156,13 +156,30 @@ build_docker_version() {
   TAG="$(get_full_tag "$1" "$2" "$3")"
   FOLDER="$(get_scala_folder "$1" "$2" "$3")"
   docker build -t "$TAG" "$FOLDER"
-  if [[ "DOCKER_SBT_LATEST" == "$1" && "DOCKER_SCALA_LATEST" == "$2" ]]; then
+}
+
+# $1 sbt version
+# $2 scala version
+# $3 is it alpine
+check_for_latest_and_tag() {
+  TAG="$(get_full_tag "$1" "$2" "$3")"
+  if [[ "$DOCKER_SBT_LATEST" == "$1" && "$DOCKER_SCALA_LATEST" == "$2" ]]; then
     if [[ $3 -eq 0 ]]; then
       TAG_LATEST="$DOCKER_ACC/$DOCKER_REPO:latest"
     else
       TAG_LATEST="$DOCKER_ACC/$DOCKER_REPO:alpine"
     fi
     docker tag "$TAG" "$TAG_LATEST"
+    docker push "$TAG_LATEST"
+  fi
+  if [[ "$DOCKER_SBT_LATEST" == "$1" ]]; then
+    if [[ $3 -eq 0 ]]; then
+      TAG_LATEST="$DOCKER_ACC/$DOCKER_REPO:latest-$2"
+    else
+      TAG_LATEST="$DOCKER_ACC/$DOCKER_REPO:alpine-$2"
+    fi
+    docker tag "$TAG" "$TAG_LATEST"
+    docker push "$TAG_LATEST"
   fi
 }
 
@@ -209,7 +226,18 @@ check_and_push_docker() {
   if ! (has_docker_image "$1" "$2" "$3"); then
     echo "Building Dockerfile for SBT v$1 (Scala v$2) ($3)"
     build_docker_version "$1" "$2" "$3"
-    push_docker_version "$1" "$2" "$3"
+    if (test_docker_version "$1" "$2" "$3"); then
+      push_docker_version "$1" "$2" "$3"
+      check_for_latest_and_tag "$1" "$2" "$3"
+    else
+      false
+    fi
+  else
+    if (test_docker_version "$1" "$2" "$3"); then
+      check_for_latest_and_tag "$1" "$2" "$3"
+    else
+      false
+    fi
   fi
 }
 
@@ -230,6 +258,14 @@ versions_to_docker() {
       check_and_push_docker_versions "$sbt_version" "$scala_version"
     done <<<"$scala_versions"
   done <<<"$sbt_versions"
+}
+
+print_info() {
+  echo "Using \"$DOCKER_ACC/$DOCKER_REPO\" as docker repo"
+  echo "Latest sbt version: $DOCKER_SBT_LATEST"
+  echo "Latest scala version: $DOCKER_SCALA_LATEST"
+  echo "Using \"$SBT_VERSIONS_FILE\" for sbt versions"
+  echo "Using \"$SCALA_VERSIONS_FILE\" for scala versions"
 }
 
 if [[ -z $1 ]]; then
@@ -280,6 +316,9 @@ else
   elif [[ $1 == "docker" ]]; then
     echo "Pushing all new versions to Docker"
     versions_to_docker
+    exit $?
+  elif [[ $1 == "info" ]]; then
+    print_info
     exit $?
   elif [[ $1 == "travis" ]]; then
     echo "Checking, building, testing and pushing SBT v$2 (Scala v$3)"

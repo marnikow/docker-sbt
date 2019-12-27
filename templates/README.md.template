@@ -7,14 +7,20 @@
 # [SBT Docker Image](https://hub.docker.com/r/marnikow/sbt/)
 
 ## Supported tags and respective `Dockerfile` links
-- [`1.3.5-2.13.1`,`latest`(1.3.5/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/2.13.1/Dockerfile)
-- [`1.3.5-2.13.1-alpine`,`alpine`(1.3.5/alpine/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/alpine/2.13.1/Dockerfile)
+- [`1.3.6-2.13.1`,`latest`(1.3.5/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/2.13.1/Dockerfile)
+- [`1.3.6-2.13.1-alpine`,`alpine`(1.3.5/alpine/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/alpine/2.13.1/Dockerfile)
+- [`1.3.5-2.13.1`(1.3.5/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/2.13.1/Dockerfile)
+- [`1.3.5-2.13.1-alpine`(1.3.5/alpine/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/alpine/2.13.1/Dockerfile)
 - [`1.3.4-2.13.1`(1.3.4/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.4/2.13.1/Dockerfile)
 - [`1.3.4-2.13.1-alpine`(1.3.4/alpine/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.4/alpine/2.13.1/Dockerfile)
+- [`1.3.6-2.12.10`(1.3.5/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/2.12.10/Dockerfile)
+- [`1.3.6-2.12.10-alpine`(1.3.5/alpine/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/alpine/2.12.10/Dockerfile)
 - [`1.3.5-2.12.10`(1.3.5/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/2.12.10/Dockerfile)
 - [`1.3.5-2.12.10-alpine`(1.3.5/alpine/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/alpine/2.12.10/Dockerfile)
 - [`1.3.4-2.12.10`(1.3.4/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.4/2.12.10/Dockerfile)
 - [`1.3.4-2.12.10-alpine`(1.3.4/alpine/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.4/alpine/2.12.10/Dockerfile)
+
+Aside from the default `latest` and `alpine` tag, each sbt version that uses the latest scala version receives the `latest-<scala-version>` or `alpine-<scala-version>` (like `latest-2.12.10`) tag.
 
 See also the [previous versions](#previous-versions) of the SBT Docker image.
 
