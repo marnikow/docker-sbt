@@ -41,6 +41,16 @@ alias sbt='docker run --rm --tty --interactive --volume $PWD:/app marnikow/sbt'
 This image is based on the [`marnikow/scala`](https://hub.docker.com/r/marnikow/scala/) image to provide an environment to compile and execute Java and Scala programs. The versions of the image are composed of two parts: the version number before the hyphen references the version of the [SBT](https://scala-sbt.org/index.html) environment and the second part references to the version of the used Scala environment. Just as in the Scala repo, it is possible to use a alpine-based image by using the suffix `-alpine` .
 
 ### Previous Versions
+- [`1.3.6-2.13.1`(1.3.6/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/2.13.1/Dockerfile)
+- [`1.3.6-2.13.1-alpine`(1.3.6/alpine/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/alpine/2.13.1/Dockerfile)
+- [`1.3.6-2.12.9`(1.3.6/2.12.9/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/2.12.9/Dockerfile)
+- [`1.3.6-2.12.9-alpine`(1.3.6/alpine/2.12.9/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/alpine/2.12.9/Dockerfile)
+- [`1.3.6-2.12.10`(1.3.6/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/2.12.10/Dockerfile)
+- [`1.3.6-2.12.10-alpine`(1.3.6/alpine/2.12.10/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/alpine/2.12.10/Dockerfile)
+- [`1.3.6-2.11.12`(1.3.6/2.11.12/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/2.11.12/Dockerfile)
+- [`1.3.6-2.11.12-alpine`(1.3.6/alpine/2.11.12/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/alpine/2.11.12/Dockerfile)
+- [`1.3.6-2.10.7`(1.3.6/2.10.7/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/2.10.7/Dockerfile)
+- [`1.3.6-2.10.7-alpine`(1.3.6/alpine/2.10.7/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.6/alpine/2.10.7/Dockerfile)
 - [`1.3.5-2.13.1`(1.3.5/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/2.13.1/Dockerfile)
 - [`1.3.5-2.13.1-alpine`(1.3.5/alpine/2.13.1/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/alpine/2.13.1/Dockerfile)
 - [`1.3.5-2.12.9`(1.3.5/2.12.9/Dockerfile)](https://github.com/marnikow/docker-sbt/blob/master/1.3.5/2.12.9/Dockerfile)
